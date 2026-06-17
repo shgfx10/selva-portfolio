@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Selva Ganesh K — AI Research Analyst & Writer</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0f0e0c;
+  --paper: #f5f0e8;
+  --accent: #c8401a;
+  --gold: #b8860b;
+  --muted: #6b6558;
+  --border: #d4ccbc;
+  --tag-bg: #e8e2d6;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Mono', monospace;
+  background: var(--paper);
+  color: var(--ink);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* NOISE TEXTURE */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0.6;
+}
+
+/* HEADER */
+header {
+  border-bottom: 1px solid var(--border);
+  padding: 0 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  position: sticky;
+  top: 0;
+  background: var(--paper);
+  z-index: 100;
+}
+
+.logo {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+nav a {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+nav a:hover { color: var(--accent); }
+
+.nav-cta {
+  background: var(--ink);
+  color: var(--paper) !important;
+  padding: 8px 18px;
+  border-radius: 2px;
+  transition: background 0.2s !important;
+}
+
+.nav-cta:hover { background: var(--accent) !important; color: var(--paper) !important; }
+
+/* HERO */
+.hero {
+  padding: 80px 48px 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-left { position: relative; }
+
+.hero-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-eyebrow::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--accent);
+}
+
+.hero-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(48px, 6vw, 80px);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 32px;
+}
+
+.hero-name em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.hero-tagline {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--muted);
+  max-width: 420px;
+  margin-bottom: 40px;
+  font-weight: 300;
+}
+
+.hero-quote {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--ink);
+  border-left: 3px solid var(--accent);
+  padding-left: 20px;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 14px 28px;
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover { background: var(--accent); }
+
+.btn-secondary {
+  border: 1px solid var(--border);
+  color: var(--ink);
+  padding: 14px 28px;
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+.hero-right {
+  padding-top: 16px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin-bottom: 32px;
+}
+
+.stat-cell {
+  background: var(--paper);
+  padding: 28px 24px;
+}
+
+.stat-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.stat-label {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.lang-strip {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.lang-tag {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  color: var(--muted);
+  background: var(--tag-bg);
+}
+
+/* SECTION LABEL */
+.section-label {
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* WRITING SECTION */
+.writing-section {
+  padding: 80px 48px;
+  border-bottom: 1px solid var(--border);
+}
+
+.articles-list { display: flex; flex-direction: column; gap: 0; }
+
+.article-row {
+  display: grid;
+  grid-template-columns: 80px 1fr auto;
+  gap: 32px;
+  align-items: start;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--border);
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.15s;
+  cursor: pointer;
+}
+
+.article-row:first-child { border-top: 1px solid var(--border); }
+
+.article-row:hover .article-title { color: var(--accent); }
+.article-row:hover .article-num { color: var(--accent); }
+
+.article-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--border);
+  line-height: 1;
+  transition: color 0.15s;
+  padding-top: 4px;
+}
+
+.article-body {}
+
+.article-cat {
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.article-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--ink);
+  margin-bottom: 8px;
+  transition: color 0.15s;
+}
+
+.article-blurb {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+  font-weight: 300;
+  max-width: 540px;
+}
+
+.article-meta {
+  text-align: right;
+  padding-top: 4px;
+}
+
+.article-date {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.article-arrow {
+  font-size: 18px;
+  color: var(--border);
+  display: block;
+  transition: color 0.15s, transform 0.15s;
+}
+
+.article-row:hover .article-arrow {
+  color: var(--accent);
+  transform: translateX(4px);
+}
+
+/* JAPANESE TAG */
+.jp-tag {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 12px;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 2px 8px;
+  border-radius: 2px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+/* PROJECTS SECTION */
+.projects-section {
+  padding: 80px 48px;
+  border-bottom: 1px solid var(--border);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+.project-card {
+  background: var(--paper);
+  padding: 36px 32px;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: background 0.15s;
+  position: relative;
+}
+
+.project-card:hover { background: var(--tag-bg); }
+.project-card:hover .project-title { color: var(--accent); }
+
+.project-type {
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.project-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.project-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 12px;
+  line-height: 1.3;
+  transition: color 0.15s;
+}
+
+.project-desc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+
+.project-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.metric-tag {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 4px 10px;
+  background: var(--tag-bg);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  color: var(--ink);
+}
+
+.metric-tag.highlight {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+
+/* LIVE DEMO BADGE */
+.live-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 3px 8px;
+  border-radius: 2px;
+}
+
+/* SKILLS SECTION */
+.skills-section {
+  padding: 80px 48px;
+  border-bottom: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 80px;
+}
+
+.skills-intro {}
+
+.skills-intro-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: var(--ink);
+}
+
+.skills-intro-body {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+.skills-grid-right {}
+
+.skill-group { margin-bottom: 28px; }
+
+.skill-group-label {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.skill-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-pill {
+  font-size: 12px;
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  color: var(--ink);
+  background: var(--tag-bg);
+  font-weight: 400;
+}
+
+/* AWARDS SECTION */
+.awards-section {
+  padding: 80px 48px;
+  border-bottom: 1px solid var(--border);
+}
+
+.awards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+.award-card {
+  background: var(--paper);
+  padding: 32px 28px;
+}
+
+.award-rank {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 900;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 16px;
+  opacity: 0.7;
+}
+
+.award-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.award-body {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* CONTACT SECTION */
+.contact-section {
+  padding: 80px 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.contact-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 1.1;
+  color: var(--ink);
+  margin-bottom: 20px;
+}
+
+.contact-title em { font-style: italic; color: var(--accent); }
+
+.contact-body {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.8;
+  font-weight: 300;
+  margin-bottom: 32px;
+}
+
+.contact-links { display: flex; flex-direction: column; gap: 12px; }
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 400;
+  padding: 16px 20px;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.contact-link:hover { border-color: var(--accent); color: var(--accent); }
+
+.contact-link-label {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  width: 60px;
+  flex-shrink: 0;
+}
+
+.contact-link:hover .contact-link-label { color: var(--accent); opacity: 0.7; }
+
+/* FOOTER */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 24px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-copy {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+}
+
+.footer-quote {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-left > * {
+  animation: fadeUp 0.6s ease forwards;
+  opacity: 0;
+}
+
+.hero-eyebrow { animation-delay: 0.1s; }
+.hero-name { animation-delay: 0.2s; }
+.hero-quote { animation-delay: 0.3s; }
+.hero-tagline { animation-delay: 0.35s; }
+.hero-ctas { animation-delay: 0.4s; }
+
+.hero-right {
+  animation: fadeUp 0.6s ease 0.3s forwards;
+  opacity: 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hero, .skills-section, .contact-section {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .projects-grid, .awards-grid { grid-template-columns: 1fr; }
+  .article-row { grid-template-columns: 48px 1fr auto; gap: 16px; }
+  header { padding: 0 24px; }
+  .hero, .writing-section, .projects-section, .skills-section, .awards-section, .contact-section {
+    padding-left: 24px; padding-right: 24px;
+  }
+  nav { display: none; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a href="#" class="logo">Selva Ganesh K</a>
+  <nav>
+    <a href="#writing">Writing</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+    <a href="https://mysticquill.blogspot.com" target="_blank" class="nav-cta">Mystic Quill ↗</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">AI Research Analyst & Writer</div>
+    <h1 class="hero-name">Selva<br><em>Ganesh</em><br>K</h1>
+    <blockquote class="hero-quote">"The best thing about time is it changes."</blockquote>
+    <p class="hero-tagline">B.Tech AI/ML. I build Computer Vision and NLP systems by day and write about mechs, lightsabers, flying carpets, and the science hiding inside impossible things by night. Tamil Nadu, India.</p>
+    <div class="hero-ctas">
+      <a href="https://mysticquill.blogspot.com" target="_blank" class="btn-primary">Read Mystic Quill</a>
+      <a href="https://github.com/shgfx10" target="_blank" class="btn-secondary">View GitHub</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="stats-grid">
+      <div class="stat-cell">
+        <div class="stat-number">15</div>
+        <div class="stat-label">Published Articles</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-number">13</div>
+        <div class="stat-label">Projects Built</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-number">93%</div>
+        <div class="stat-label">NLP Accuracy</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-number">15+</div>
+        <div class="stat-label">Client Engagements</div>
+      </div>
+    </div>
+    <div class="lang-strip">
+      <span class="lang-tag">English</span>
+      <span class="lang-tag">Tamil</span>
+      <span class="lang-tag" style="font-family:'Noto Sans JP',sans-serif;">日本語</span>
+      <span class="lang-tag">Tamil Nadu, India</span>
+    </div>
+  </div>
+</section>
+
+<!-- WRITING -->
+<section class="writing-section" id="writing">
+  <div class="section-label">Selected Writing — Mystic Quill</div>
+  <div class="articles-list">
+
+    <a class="article-row" href="https://mysticquill.blogspot.com" target="_blank">
+      <div class="article-num">01</div>
+      <div class="article-body">
+        <div class="article-cat">Technology <span class="jp-tag">日本語</span></div>
+        <div class="article-title">2026年、ゼロからAIを学ぶなら私はこう始める</div>
+        <div class="article-blurb">An honest AI learning roadmap written in Japanese — for anyone starting from zero in the age of information overload.</div>
+      </div>
+      <div class="article-meta">
+        <span class="article-date">Apr 17, 2026</span>
+        <span class="article-arrow">→</span>
+      </div>
+    </a>
+
+    <a class="article-row" href="https://mysticquill.blogspot.com" target="_blank">
+      <div class="article-num">02</div>
+      <div class="article-body">
+        <div class="article-cat">Engineering · Feasibility</div>
+        <div class="article-title">I Tried to Design a Real Combat Mech — Here's Why We Need 100 More Years</div>
+        <div class="article-blurb">From fusion reactors to carbon nanotube frames — the complete physics of why a real mech is impossible today and exactly what needs to change.</div>
+      </div>
+      <div class="article-meta">
+        <span class="article-date">Apr 25, 2026</span>
+        <span class="article-arrow">→</span>
+      </div>
+    </a>
+
+    <a class="article-row" href="https://mysticquill.blogspot.com" target="_blank">
+      <div class="article-num">03</div>
+      <div class="article-body">
+        <div class="article-cat">Biology · Science</div>
+        <div class="article-title">I Wanted to Be a Bug-Powered Superhero. Here's What the Science Actually Says.</div>
+        <div class="article-blurb">Six real superpowers from peer-reviewed science — resilin, mantis shrimp cavitation, dragonfly targeting, dung beetle strength, and swarm intelligence.</div>
+      </div>
+      <div class="article-meta">
+        <span class="article-date">May 3, 2026</span>
+        <span class="article-arrow">→</span>
+      </div>
+    </a>
+
+    <a class="article-row" href="https://mysticquill.blogspot.com" target="_blank">
+      <div class="article-num">04</div>
+      <div class="article-body">
+        <div class="article-cat">Physics · Thesis</div>
+        <div class="article-title">I Had a Dream About the Multiverse. Here's What Physics Actually Says.</div>
+        <div class="article-blurb">Many Worlds, Loop Quantum Gravity, fine-tuning — a full physics thesis with equations, starting from a soccer dream at 4am. Includes a five-step proof of discrete spacetime.</div>
+      </div>
+      <div class="article-meta">
+        <span class="article-date">May 11, 2026</span>
+        <span class="article-arrow">→</span>
+      </div>
+    </a>
+
+    <a class="article-row" href="https://mysticquill.blogspot.com" target="_blank">
+      <div class="article-num">05</div>
+      <div class="article-body">
+        <div class="article-cat">Geopolitics · Defence</div>
+        <div class="article-title">How Drones Changed Modern Warfare</div>
+        <div class="article-blurb">From 1849 Austrian incendiary balloons to Azerbaijan's 44-day war — the complete strategic arc of unmanned weapons in conflict.</div>
+      </div>
+      <div class="article-meta">
+        <span class="article-date">Mar 17, 2026</span>
+        <span class="article-arrow">→</span>
+      </div>
+    </a>
+
+    <a class="article-row" href="https://mysticquill.blogspot.com" target="_blank">
+      <div class="article-num">06</div>
+      <div class="article-body">
+        <div class="article-cat">Philosophy · Psychology</div>
+        <div class="article-title">Why Humans Need Hell — And It Has Nothing To Do With Religion</div>
+        <div class="article-blurb">The neuroscience of guilt, Terror Management Theory, Dostoevsky's warning, and why the concept of cosmic accountability is a psychological necessity.</div>
+      </div>
+      <div class="article-meta">
+        <span class="article-date">May 18, 2026</span>
+        <span class="article-arrow">→</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="projects-section" id="projects">
+  <div class="section-label">AI Projects & Live Documents</div>
+  <div class="projects-grid">
+
+    <a class="project-card" href="https://github.com/shgfx10/traffic-violation-detection" target="_blank">
+      <div class="project-type"><div class="project-dot"></div>Computer Vision · CNN · OpenCV</div>
+      <div class="project-title">Smart Traffic Violation Detection</div>
+      <div class="project-desc">End-to-end real-time detection system trained on 5,000+ annotated images. Detects helmet violations, red-light running, lane violations. Selected as city pilot project.</div>
+      <div class="project-metrics">
+        <span class="metric-tag highlight">89% Accuracy</span>
+        <span class="metric-tag">15 FPS Real-Time</span>
+        <span class="metric-tag">City Deployment</span>
+        <span class="metric-tag">OpenCV + TensorFlow</span>
+      </div>
+    </a>
+
+    <a class="project-card" href="https://github.com/shgfx10/nutraceuticals-chatbot" target="_blank">
+      <div class="project-type"><div class="project-dot"></div>NLP · Semantic Similarity · Streamlit</div>
+      <div class="project-title">AI Product Recommendation System</div>
+      <div class="project-desc">Conversational AI using NLP and semantic similarity. 93% query accuracy — 25% improvement over baseline. Deployed as production-ready Streamlit interface.</div>
+      <div class="project-metrics">
+        <span class="metric-tag highlight">93% Accuracy</span>
+        <span class="metric-tag">&lt;0.8s Response</span>
+        <span class="metric-tag">scikit-learn</span>
+        <span class="metric-tag">Production Deployed</span>
+      </div>
+    </a>
+
+    <a class="project-card" href="https://shgfx10.github.io/aegis-triton" target="_blank">
+      <div class="live-badge">Live ↗</div>
+      <div class="project-type"><div class="project-dot"></div>Speculative Engineering · Research</div>
+      <div class="project-title">Aegis Triton — Classified Research Document</div>
+      <div class="project-desc">A peer-reviewed military research paper set in 2126. Comparative technical assessment of the RX-0A1 combat mech and Triton X-1 tri-modal vehicle. Grounded in real physics.</div>
+      <div class="project-metrics">
+        <span class="metric-tag highlight">Live on GitHub Pages</span>
+        <span class="metric-tag">Interactive Document</span>
+        <span class="metric-tag">Real Engineering</span>
+      </div>
+    </a>
+
+    <a class="project-card" href="https://shgfx10.github.io/apex10" target="_blank">
+      <div class="live-badge">Live ↗</div>
+      <div class="project-type"><div class="project-dot"></div>Product Design · Speculative Tech</div>
+      <div class="project-title">APEX 10 — Premium Handheld Blueprint</div>
+      <div class="project-desc">Full product specification for a tri-mode handheld platform — Gaming, PC, and Console. Complete with schematic, haptic engine design, feasibility timeline, and edition breakdown.</div>
+      <div class="project-metrics">
+        <span class="metric-tag highlight">Live on GitHub Pages</span>
+        <span class="metric-tag">6 Operating Modes</span>
+        <span class="metric-tag">PS5-Class Haptics</span>
+      </div>
+    </a>
+
+    <a class="project-card" href="https://shgfx10.github.io/templates/" target="_blank">
+      <div class="live-badge">Live ↗</div>
+      <div class="project-type"><div class="project-dot"></div>Web Design · Templates</div>
+      <div class="project-title">Website Templates Collection</div>
+      <div class="project-desc">6 premium website templates for tech startups and modern businesses. Includes anime themes (Love Live), cyberpunk (Matrix), kawaii (Hello Kitty), and more.</div>
+      <div class="project-metrics">
+        <span class="metric-tag highlight">6 Templates</span>
+        <span class="metric-tag">HTML/CSS/JS</span>
+        <span class="metric-tag">GitHub Pages</span>
+      </div>
+    </a>
+
+    <a class="project-card" href="https://shgfx10.github.io/Games/stickman-fight/" target="_blank">
+      <div class="live-badge">Live ↗</div>
+      <div class="project-type"><div class="project-dot"></div>Game Development · Canvas</div>
+      <div class="project-title">Stickman Fight — Browser Game</div>
+      <div class="project-desc">2D fighting game with directional movement, 4 combat moves, AI opponent, and dynamic health bars. Built with pure HTML5 Canvas and JavaScript.</div>
+      <div class="project-metrics">
+        <span class="metric-tag highlight">2-Player Mode</span>
+        <span class="metric-tag">AI Opponent</span>
+        <span class="metric-tag">No Dependencies</span>
+      </div>
+    </a>
+
+    <a class="project-card" href="https://shgfx10.github.io/Blueprints/" target="_blank">
+      <div class="live-badge">Live ↗</div>
+      <div class="project-type"><div class="project-dot"></div>Technical Documentation · Blueprints</div>
+      <div class="project-title">Architecture Blueprints Collection</div>
+      <div class="project-desc">Interactive schematics for fictional and real-world systems. Includes Gundam RX-78, Hogwarts Castle, Citadel of Ricks, and Wandering Albatross biology.</div>
+      <div class="project-metrics">
+        <span class="metric-tag highlight">4 Blueprints</span>
+        <span class="metric-tag">SVG Schematics</span>
+        <span class="metric-tag">Interactive</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="skills-section" id="skills">
+  <div class="skills-intro">
+    <div class="section-label" style="margin-bottom:24px;">Skills</div>
+    <h2 class="skills-intro-title">What I<br><em style="font-family:'Playfair Display',serif;font-style:italic;color:var(--accent)">Actually</em><br>Bring</h2>
+    <p class="skills-intro-body">The combination of AI technical depth and long-form research writing is rare. Most engineers can't write. Most writers can't build. I do both — and I do both publicly, with proof.</p>
+  </div>
+  <div class="skills-grid-right">
+    <div class="skill-group">
+      <div class="skill-group-label">Research & Writing</div>
+      <div class="skill-pills">
+        <span class="skill-pill">Long-form Research</span>
+        <span class="skill-pill">Technical Writing</span>
+        <span class="skill-pill">Science Communication</span>
+        <span class="skill-pill">Geopolitical Analysis</span>
+        <span class="skill-pill">Policy Research</span>
+        <span class="skill-pill">Academic Writing</span>
+        <span class="skill-pill">Physics Theses</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-label">AI / ML Technical</div>
+      <div class="skill-pills">
+        <span class="skill-pill">Python</span>
+        <span class="skill-pill">TensorFlow</span>
+        <span class="skill-pill">OpenCV</span>
+        <span class="skill-pill">scikit-learn</span>
+        <span class="skill-pill">CNNs</span>
+        <span class="skill-pill">NLP</span>
+        <span class="skill-pill">Computer Vision</span>
+        <span class="skill-pill">Streamlit</span>
+        <span class="skill-pill">Pandas</span>
+        <span class="skill-pill">NumPy</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-label">Web Development</div>
+      <div class="skill-pills">
+        <span class="skill-pill">HTML5 Canvas</span>
+        <span class="skill-pill">CSS3</span>
+        <span class="skill-pill">JavaScript</span>
+        <span class="skill-pill">SVG Graphics</span>
+        <span class="skill-pill">Responsive Design</span>
+        <span class="skill-pill">GitHub Pages</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-label">Languages</div>
+      <div class="skill-pills">
+        <span class="skill-pill">English — Fluent</span>
+        <span class="skill-pill" style="font-family:'Noto Sans JP',sans-serif;">日本語 — Fluent</span>
+        <span class="skill-pill">Tamil — Native</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-label">Topic Range</div>
+      <div class="skill-pills">
+        <span class="skill-pill">AI & Technology</span>
+        <span class="skill-pill">Geopolitics</span>
+        <span class="skill-pill">Defence</span>
+        <span class="skill-pill">Physics</span>
+        <span class="skill-pill">Biology</span>
+        <span class="skill-pill">Materials Science</span>
+        <span class="skill-pill">Philosophy</span>
+        <span class="skill-pill">Culture</span>
+        <span class="skill-pill">Travel</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section class="awards-section">
+  <div class="section-label">Recognition</div>
+  <div class="awards-grid">
+    <div class="award-card">
+      <div class="award-rank">1st</div>
+      <div class="award-title">Technical Paper Presentation — IBM ICE Day 2022</div>
+      <div class="award-body">Selected from 80+ presentations. Presented AI research to 50+ industry professionals. Recognised for communicating complex AI to non-technical audiences.</div>
+    </div>
+    <div class="award-card">
+      <div class="award-rank">2nd</div>
+      <div class="award-title">Innovation Pitch — TEXPO 2K24</div>
+      <div class="award-body">Pitched ML-driven biomedical solution with technical documentation, competitive market analysis, and 3-year financial projections.</div>
+    </div>
+    <div class="award-card">
+      <div class="award-rank">15+</div>
+      <div class="award-title">Published Articles — Mystic Quill</div>
+      <div class="award-body">Long-form research across AI, geopolitics, physics, biology, and philosophy. Writing in English and Japanese for a global audience.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div>
+    <h2 class="contact-title">Let's<br><em>Work</em><br>Together</h2>
+    <p class="contact-body">Available for research writing, AI content, technical writing, and analyst roles. Remote preferred. I write in English and Japanese.</p>
+    <a href="https://mysticquill.blogspot.com" target="_blank" class="btn-primary" style="display:inline-block;">Read My Work First ↗</a>
+  </div>
+  <div class="contact-links">
+    <a class="contact-link" href="mailto:selvaganeshtarun1423@gmail.com">
+      <span class="contact-link-label">Email</span>
+      selvaganeshtarun1423@gmail.com
+    </a>
+    <a class="contact-link" href="https://mysticquill.blogspot.com" target="_blank">
+      <span class="contact-link-label">Blog</span>
+      mysticquill.blogspot.com
+    </a>
+    <a class="contact-link" href="https://github.com/shgfx10" target="_blank">
+      <span class="contact-link-label">GitHub</span>
+      github.com/shgfx10
+    </a>
+    <a class="contact-link" href="https://linkedin.com/in/selva-ganesh-61344b342" target="_blank">
+      <span class="contact-link-label">LinkedIn</span>
+      selva-ganesh-61344b342
+    </a>
+    <a class="contact-link" href="tel:+919342179339">
+      <span class="contact-link-label">Phone</span>
+      +91 93421 79339
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-copy">© 2026 Selva Ganesh K — Tamil Nadu, India</span>
+  <span class="footer-quote">"The best thing about time is it changes."</span>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selva Ganesh K - Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        @page { size: A4; margin: 0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #f5f0e8; color: #1a1a1a; line-height: 1.6; }
+        .page { width: 210mm; min-height: 297mm; margin: 0 auto; background: white; box-shadow: 0 0 30px rgba(0,0,0,0.1); }
+
+        /* HEADER */
+        .header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white; padding: 40px; }
+        .header h1 { font-family: 'Playfair Display', serif; font-size: 2.8rem; font-weight: 900; margin-bottom: 4px; }
+        .header .role { color: #c8401a; font-size: 1rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 16px; }
+        .header .contact { display: flex; flex-wrap: wrap; gap: 20px; font-size: 0.8rem; opacity: 0.9; }
+        .header .contact span { display: flex; align-items: center; gap: 6px; }
+
+        /* MAIN CONTENT */
+        .content { display: grid; grid-template-columns: 1fr 280px; gap: 0; }
+
+        /* LEFT COLUMN */
+        .left { padding: 30px 30px 30px 40px; }
+
+        .section { margin-bottom: 24px; }
+        .section-title { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: #c8401a; text-transform: uppercase; letter-spacing: 0.1em; border-bottom: 2px solid #c8401a; padding-bottom: 6px; margin-bottom: 16px; }
+
+        .summary { font-size: 0.85rem; color: #333; line-height: 1.7; }
+
+        .experience-item { margin-bottom: 18px; }
+        .experience-header { display: flex; justify-content: space-between; align-items: start; margin-bottom: 6px; }
+        .experience-title { font-weight: 700; font-size: 0.9rem; }
+        .experience-date { font-size: 0.75rem; color: #666; }
+        .experience-company { font-size: 0.8rem; color: #c8401a; font-weight: 500; }
+        .experience-desc { font-size: 0.78rem; color: #444; margin-top: 6px; }
+        .experience-desc li { margin-bottom: 4px; padding-left: 12px; position: relative; }
+        .experience-desc li::before { content: "▸"; position: absolute; left: 0; color: #c8401a; }
+
+        /* RIGHT COLUMN */
+        .right { background: #f8f6f2; padding: 30px 40px 30px 30px; border-left: 1px solid #e0dcd4; }
+
+        .skill-group { margin-bottom: 18px; }
+        .skill-title { font-size: 0.7rem; font-weight: 700; color: #c8401a; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; }
+        .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+        .skill-tag { font-size: 0.7rem; padding: 4px 10px; background: white; border: 1px solid #e0dcd4; border-radius: 4px; color: #333; }
+
+        .language-item { display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 6px; }
+        .language-level { color: #c8401a; font-weight: 600; }
+
+        .education-item { margin-bottom: 12px; }
+        .education-degree { font-weight: 700; font-size: 0.85rem; }
+        .education-school { font-size: 0.75rem; color: #666; }
+        .education-year { font-size: 0.7rem; color: #888; }
+
+        .cert-item { font-size: 0.75rem; margin-bottom: 6px; color: #444; }
+
+        /* PRINT STYLES */
+        @media print {
+            body { background: white; }
+            .page { box-shadow: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- HEADER -->
+        <div class="header">
+            <h1>Selva Ganesh K</h1>
+            <div class="role">AI Research Analyst & Technical Writer</div>
+            <div class="contact">
+                <span>Tamil Nadu, India</span>
+                <span>+91 9342179339</span>
+                <span>selvaganeshtarun1423@gmail.com</span>
+                <span>github.com/shgfx10</span>
+                <span>mysticquill.blogspot.com</span>
+            </div>
+        </div>
+
+        <div class="content">
+            <!-- LEFT COLUMN -->
+            <div class="left">
+                <div class="section">
+                    <div class="section-title">Professional Summary</div>
+                    <p class="summary">AI Research Analyst and Technical Writer who turns complex AI and scientific concepts into accessible, evidence-based writing. B.Tech in AI/ML. Proven ability to engineer production-ready CV and NLP systems. IBM ICE Day 1st Place winner. 17+ published research articles in English and Japanese. Built 20+ web projects including templates, games, and interactive blueprints.</p>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Experience</div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div>
+                                <div class="experience-title">Research Writer & AI Analyst</div>
+                                <div class="experience-company">Mystic Quill</div>
+                            </div>
+                            <div class="experience-date">2025 - Present</div>
+                        </div>
+                        <ul class="experience-desc">
+                            <li>Grew Mystic Quill to 17+ published articles across AI, geopolitics, physics, defence, and science - attracting organic readership across English and Japanese audiences without paid promotion</li>
+                            <li>How Drones Changed Modern Warfare - strategic evolution from 1849 Austrian incendiary balloons to the 2020 Nagorno-Karabakh conflict, establishing the publication's defence research voice</li>
+                            <li>I Tried to Design a Real Combat Mech - feasibility analysis combining materials science, fusion physics, and AI architecture; generated 12+ organic views and embedded live classified research document</li>
+                            <li>I Had a Dream About the Multiverse - full physics thesis with equations, Loop Quantum Gravity proof methodology, and peer-reviewed bibliography; demonstrated ability to translate graduate-level physics for general audiences</li>
+                            <li>The Orthographic Atrophy Hypothesis - original peer-reviewed-style scientific paper on autocorrect and cognitive decline, including novel hypothesis, neuroimaging citations, and intervention proposals</li>
+                            <li>Published Japanese-language AI learning roadmap for Japanese readers - demonstrating trilingual technical communication capability</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div>
+                                <div class="experience-title">Business Associate - AI Solutions</div>
+                                <div class="experience-company">Etiqu Business Services</div>
+                            </div>
+                            <div class="experience-date">2025 - 2026</div>
+                        </div>
+                        <ul class="experience-desc">
+                            <li>Secured buy-in from C-level stakeholders in 8+ pitch meetings by developing presentations that translated AI capabilities into clear ROI narratives</li>
+                            <li>Identified 3 high-probability AI use cases for enterprise client with cost-benefit analysis projecting 18-month payback period</li>
+                            <li>Accelerated pipeline development across 15+ client engagements by bridging technical AI knowledge with accessible business language</li>
+                            <li>Analysed 10+ AI vendors and produced structured evaluation frameworks that reduced client decision timelines</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div>
+                                <div class="experience-title">Freelance AI Research Analyst</div>
+                                <div class="experience-company">Fiverr / Outlier AI</div>
+                            </div>
+                            <div class="experience-date">2025 - Present</div>
+                        </div>
+                        <ul class="experience-desc">
+                            <li>Delivered AI data quality evaluation for Outlier AI's Aether project</li>
+                            <li>Produced research writing packages from 500 to 2,000 words</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Projects</div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="experience-title">Website Templates Collection</div>
+                            <div class="experience-date">2026</div>
+                        </div>
+                        <p class="experience-desc">6 premium templates (HTML/CSS/JS) including anime, cyberpunk, kawaii themes. DevFolio features dark/light mode, GitHub stats, listed on Gumroad.</p>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="experience-title">Architecture Blueprints</div>
+                            <div class="experience-date">2026</div>
+                        </div>
+                        <p class="experience-desc">4 interactive SVG schematics: Hogwarts, Gundam RX-78, Citadel of Ricks, Albatross biology.</p>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="experience-title">NutraSync - Pharmaceutical AI</div>
+                            <div class="experience-date">2026</div>
+                        </div>
+                        <p class="experience-desc">Next.js 14 + TypeScript full-stack app querying PubChem databases with 3D molecular visualization. Docker + GitHub Actions CI/CD.</p>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="experience-title">Smart Traffic Violation Detection</div>
+                            <div class="experience-date">2025</div>
+                        </div>
+                        <p class="experience-desc">89% accuracy, 35% false positive reduction, 15 FPS real-time monitoring. Selected as pilot project for 3 city intersections.</p>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="experience-title">AI Product Recommendation System</div>
+                            <div class="experience-date">2025</div>
+                        </div>
+                        <p class="experience-desc">93% query accuracy, under 0.8s response time. Deployed production-ready Streamlit interface.</p>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="experience-title">Stickman Fight - Browser Game</div>
+                            <div class="experience-date">2026</div>
+                        </div>
+                        <p class="experience-desc">2D fighting game with AI opponent, directional movement, 4 combat moves. Pure HTML5 Canvas.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN -->
+            <div class="right">
+                <div class="section">
+                    <div class="skill-group">
+                        <div class="skill-title">Writing & Research</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Long-form Research</span>
+                            <span class="skill-tag">Technical Writing</span>
+                            <span class="skill-tag">Science Communication</span>
+                            <span class="skill-tag">Geopolitical Analysis</span>
+                            <span class="skill-tag">Policy Research</span>
+                            <span class="skill-tag">Academic Writing</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="skill-title">AI / ML Technical</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">TensorFlow</span>
+                            <span class="skill-tag">OpenCV</span>
+                            <span class="skill-tag">scikit-learn</span>
+                            <span class="skill-tag">CNNs</span>
+                            <span class="skill-tag">NLP</span>
+                            <span class="skill-tag">Computer Vision</span>
+                            <span class="skill-tag">Streamlit</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="skill-title">Web Development</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Canvas</span>
+                            <span class="skill-tag">SVG</span>
+                            <span class="skill-tag">GitHub Pages</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="skill-title">Languages</div>
+                        <div class="language-item"><span>English</span><span class="language-level">Fluent</span></div>
+                        <div class="language-item"><span>Japanese</span><span class="language-level">Fluent</span></div>
+                        <div class="language-item"><span>Tamil</span><span class="language-level">Native</span></div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Education</div>
+                    <div class="education-item">
+                        <div class="education-degree">B.Tech - AI & ML</div>
+                        <div class="education-school">Kalasalingam Academy</div>
+                        <div class="education-year">2021 - 2025 | First Class</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Achievements</div>
+                    <div class="cert-item">1st Place - IBM ICE Day 2022</div>
+                    <div class="cert-item">2nd Place - TEXPO 2K24</div>
+                    <div class="cert-item">17+ Published Articles</div>
+                    <div class="cert-item">Globally Indexed Profile - Google & Bing</div>
+                    <div class="cert-item">Gumroad Seller - DevFolio Template</div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Certifications</div>
+                    <div class="cert-item">AI Product Management (Coursera)</div>
+                    <div class="cert-item">AI For Everyone - Andrew Ng</div>
+                    <div class="cert-item">SQL for Data Analysis</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

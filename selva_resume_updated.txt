@@ -1,0 +1,103 @@
+SELVA GANESH K
+AI Research Analyst & Technical Writer
+Tamil Nadu, India  |  +91 9342179339  |  selvaganeshtarun1423@gmail.com
+mysticquill.blogspot.com  |  github.com/shgfx10  |  linkedin.com/in/selva-ganesh-61344b342
+
+
+PROFESSIONAL SUMMARY
+
+AI Research Analyst and Technical Writer who turns complex AI and scientific concepts into accessible, evidence-based writing. B.Tech in Artificial Intelligence & Machine Learning. Proven ability to engineer production-ready Computer Vision and NLP systems and communicate their value to both technical and non-technical audiences. IBM ICE Day 1st Place winner. 17+ published research articles in English and Japanese. Built 20+ web projects including templates, games, and interactive blueprints.
+
+
+WRITING & PUBLICATION
+
+Research Writer & AI Analyst   |   Mystic Quill  -  mysticquill.blogspot.com                                        2025 - Present
+- Grew Mystic Quill to 17+ published research articles across AI, geopolitics, physics, defence, and science - attracting organic readership across English and Japanese audiences without paid promotion
+- How Drones Changed Modern Warfare - strategic evolution from 1849 to 2020 conflicts
+- I Tried to Design a Real Combat Mech - feasibility analysis combining materials science and AI
+- I Had a Dream About the Multiverse - full physics thesis with equations and peer-reviewed bibliography
+- Published Japanese-language AI learning roadmap for Japanese readers
+
+Freelance AI Research Analyst & Writer   |   Independent  -  Fiverr  -  Outlier AI                      2025 - Present
+- Delivered AI data quality evaluation for Outlier AI's Aether project
+- Produced freelance research writing and AI analysis packages
+- Maintained consistent publishing cadence across Mystic Quill, Substack, and GitHub Pages
+
+Business Associate - AI Solutions   |   Etiqu Business Services                                  2025 - 2026
+- Secured buy-in from C-level stakeholders in 8+ pitch meetings
+- Identified 3 high-probability AI use cases for enterprise client
+- Accelerated pipeline development across 15+ client engagements
+
+
+WEB DEVELOPMENT PROJECTS
+
+Website Templates Collection   |   HTML/CSS/JS  -  GitHub Pages                                     2026
+- Built 6 premium website templates for tech startups and businesses
+- Templates: Love Live Sunshine (anime), Matrix (cyberpunk), Hello Kitty (kawaii), Universe (space), Startup (minimal), DevFolio (developer portfolio)
+- DevFolio features dark/light mode, GitHub stats, blog section, newsletter - listed on Gumroad for $9
+- Live at: github.com/shgfx10/templates
+
+Architecture Blueprints Collection   |   HTML/CSS/JS  -  SVG  -  GitHub Pages                       2026
+- Created 4 interactive blueprint visualizations with animated SVG schematics
+- Blueprints: Hogwarts Castle, Gundam RX-78, Citadel of Ricks, Wandering Albatross
+- Features animated elements, responsive design, and reference images
+- Live at: github.com/shgfx10/Blueprints
+
+Stickman Fight - Browser Game   |   HTML5 Canvas  -  JavaScript                                    2026
+- Built 2D fighting game with directional movement, 4 combat moves, AI opponent
+- Features health bars, particle effects, keyboard controls for 2 players
+- Pure JavaScript with no dependencies, runs in any browser
+- Live at: github.com/shgfx10/Games
+
+Portfolio Website   |   HTML/CSS  -  Single Page Application                                      2026
+- Personal portfolio showcasing AI projects, writing, and web development work
+- Features project cards with live demos, skills section, contact form
+- Optimized for performance and responsive across devices
+
+
+AI PROJECTS
+
+NutraSync - Pharmaceutical AI Research Platform   |   Next.js 14  -  TypeScript  -  React  -  Docker   2026
+- Built production-grade full-stack web application querying PubChem and clinical databases
+- Engineered interactive 3D molecular structure visualization
+- Deployed with Docker and GitHub Actions CI/CD pipeline
+
+Smart Traffic Violation Detection   |   CV  -  CNN  -  OpenCV  -  TensorFlow                          2025
+- Achieved 89% detection accuracy for helmet violations and red-light running
+- Enabled real-time monitoring of 10+ intersections at 15 FPS
+- Selected as pilot project for 3 high-traffic city intersections
+
+AI-Powered Product Recommendation System   |   NLP  -  scikit-learn  -  Streamlit                    2025
+- Raised query accuracy to 93% with under 0.8s response time
+- Deployed production-ready Streamlit interface
+
+
+SKILLS
+
+Writing & Research:  Long-form Research Articles  |  Technical Writing  |  Science Communication  |  Geopolitical Analysis  |  Policy Research  |  Academic Writing  |  AI & Technology Writing  |  Data Annotation & Quality Evaluation
+AI / ML Technical:  Python (Expert)  |  TensorFlow  |  Keras  |  OpenCV  |  scikit-learn  |  CNNs  |  NLP  |  Computer Vision  |  Pandas  |  NumPy  |  Streamlit  |  Git  |  SQL
+Web Development:  HTML5  |  CSS3  |  JavaScript  |  HTML5 Canvas  |  SVG Graphics  |  Responsive Design  |  GitHub Pages  |  Single Page Applications
+Creative Tools:  Blender (3D Modeling)  |  Adobe Creative Suite  |  Figma
+Languages:  English (Fluent)  |  Japanese (Fluent)  |  Tamil (Native)
+Topic Range:  AI, geopolitics, defence, physics, biology, materials science, philosophy, culture, travel
+
+
+ACHIEVEMENTS & RECOGNITION
+
+1st Place - IBM ICE Day 2022. Selected from 80+ presentations. Presented AI research to 50+ industry professionals.
+2nd Place - TEXPO 2K24 Innovation Pitch. Pitched ML-driven biomedical solution with technical documentation.
+Published Research Writer - 17+ articles at Mystic Quill covering AI, geopolitics, physics, neuroscience.
+Globally Indexed Professional Profile - Searching 'Selva Ganesh research analyst' on Google and Bing returns accurate AI-generated professional summary from Himalayas and LinkedIn - confirmed in incognito mode.
+Gumroad Seller - Launched DevFolio template on Gumroad, generating first digital product sale.
+
+
+EDUCATION
+
+B.Tech - Artificial Intelligence & Machine Learning                                2021 - 2025
+Kalasalingam Academy of Research and Education  -  First Class
+Deep Learning  |  Computer Vision  |  NLP  |  ML Algorithms  |  DBMS  |  Software Project Management
+
+
+PROFESSIONAL DEVELOPMENT
+
+AI Product Management Specialization (Coursera)  |  AI For Everyone - Andrew Ng (Coursera)  |  SQL for Data Analysis  |  Business Analytics Fundamentals
